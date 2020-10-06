@@ -7,13 +7,13 @@ public class AddNumbersFromList {
 
         l1.setdata(40);
         l1.setdata(6);
-        l1.setdata(80);
-        l1.setdata(9);
+        l1.setdata(94);
+        l1.setdata(76);
 
         l2.setdata(80);
         l2.setdata(9);
-        l2.setdata(80);
-        l2.setdata(9);
+        l2.setdata(8);
+        l2.setdata(97);
 
 
         ListNode l3=addTwoNumbers(l1,l2);
