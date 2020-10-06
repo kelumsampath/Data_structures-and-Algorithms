@@ -33,4 +33,25 @@ public class AddNumbersFromList {
         }
         return head.next;
     }
+
+    public static ListNode addTwoReversedNumbers(ListNode l1, ListNode l2) {
+        int carry = 0;
+        ListNode head = new ListNode(0);
+        ListNode sum = head;
+        while (l1 != null || l2 != null) {
+            if (l1 != null) {
+                carry += l1.data;
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                carry += l2.data;
+                l2 = l2.next;
+            }
+            sum.next = new ListNode(carry % 10);
+            sum = sum.next;
+            carry /= 10;
+        }
+        sum.next = carry == 1 ? new ListNode(1) : null;
+        return head.next;
+    }
 }
