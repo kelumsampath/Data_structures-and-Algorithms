@@ -1,6 +1,17 @@
 package T2LinkedList;
 
 public class AddNumbersFromList {
+    public static void main(String[] args) {
+        ListNode l1=new ListNode(5);
+        ListNode l2=new ListNode(7);
+
+        l1.setdata(4);
+        l1.setdata(6);
+
+        l2.setdata(8);
+        l2.setdata(9);
+
+    }
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if(l1 == null)
             return l2;
