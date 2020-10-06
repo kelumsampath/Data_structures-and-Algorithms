@@ -2,17 +2,22 @@ package T2LinkedList;
 
 public class AddNumbersFromList {
     public static void main(String[] args) {
-        ListNode l1=new ListNode(5);
+        ListNode l1=new ListNode(6);
         ListNode l2=new ListNode(7);
 
-        l1.setdata(4);
+        l1.setdata(40);
         l1.setdata(6);
 
-        l2.setdata(8);
+        l2.setdata(80);
         l2.setdata(9);
 
+        ListNode l3=addTwoNumbers(l1,l2);
+        System.out.println(l3.getData());
+
+        ListNode l4=addTwoReversedNumbers(l1,l2);
+        System.out.println(l4.data);
     }
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if(l1 == null)
             return l2;
         if(l2 == null)
