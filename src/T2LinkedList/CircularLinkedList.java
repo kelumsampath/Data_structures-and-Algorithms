@@ -39,4 +39,9 @@ public class CircularLinkedList {
     public int peek(){
         return tail.getNext().getData();
     }
+
+    // Returns data at tail of list
+    public int tailPeek(){
+        return tail.getData();
+    }
 }
