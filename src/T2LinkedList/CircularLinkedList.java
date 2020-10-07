@@ -34,4 +34,9 @@ public class CircularLinkedList {
         addToHead(data);
         tail = tail.getNext();
     }
+
+    // Returns data at head of list
+    public int peek(){
+        return tail.getNext().getData();
+    }
 }
