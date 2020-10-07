@@ -57,4 +57,32 @@ public class CircularLinkedList {
         length--;
         return temp.getData();
     }
+
+    // Returns and removes data from tail of list
+    public int removeFromTail(){
+        if (isEmpty()){
+            return Integer.MIN_VALUE;
+        }
+        CLLNode finger = tail;
+        while (finger.getNext() != tail) {
+            finger = finger.getNext();
+        }
+        // finger now points to second-to-last data
+        CLLNode temp = tail;
+        if (finger == tail)	{
+            tail = null;
+        } else {
+            finger.setNext(tail.getNext());
+            tail = finger;
+        }
+        length--;
+        return temp.getData();
+    }
+
+    // Returns true if no elements in list
+    public boolean isEmpty(){
+        return tail == null;
+    }
+
+
 }
