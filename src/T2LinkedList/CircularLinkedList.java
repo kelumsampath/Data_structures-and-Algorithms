@@ -27,4 +27,11 @@ public class CircularLinkedList {
         }
         length++;
     }
+
+    // Adds element to tail of list
+    public void addToTail(int data){
+        // new entry:
+        addToHead(data);
+        tail = tail.getNext();
+    }
 }
