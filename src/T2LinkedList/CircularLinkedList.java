@@ -95,4 +95,31 @@ public class CircularLinkedList {
         return finger.getData() == data;
     }
 
+    // Removes and returns element equal to data, or null
+    public int remove(int data){
+        if (tail == null) return Integer.MIN_VALUE;
+        CLLNode finger = tail.getNext();
+        CLLNode previous = tail;
+        int compares;
+        for (compares = 0; compares < length && (!(finger.getData() == data)); compares++) {
+            previous = finger;
+            finger = finger.getNext();
+        }
+        if (finger.getData() == data) {
+            // an example of the pigeon-hole principle
+            if (tail == tail.getNext()) {
+                tail = null; }
+            else {
+                if (finger == tail)
+                    tail = previous;
+                previous.setNext(previous.getNext().getNext());
+            }
+            // finger data free
+            finger.setNext(null); 	// to keep things disconnected
+            length--;            	// fewer elements
+            return finger.getData();
+        }
+        else return Integer.MIN_VALUE;
+    }
+
 }
