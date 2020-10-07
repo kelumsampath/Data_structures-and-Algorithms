@@ -84,5 +84,15 @@ public class CircularLinkedList {
         return tail == null;
     }
 
+    // Returns true if list contains data, else false
+    public boolean contains(int data){
+        if (tail == null) return false;
+        CLLNode finger;
+        finger = tail.getNext();
+        while (finger != tail && (!(finger.getData() == data))){
+            finger = finger.getNext();
+        }
+        return finger.getData() == data;
+    }
 
 }
