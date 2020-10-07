@@ -138,4 +138,19 @@ public class CircularLinkedList {
         tail = null;
     }
 
+    // Return a string representation of this collection, in the form: ["str1","str2",...].
+    public String toString(){
+        String result = "[";
+        if (tail == null) {
+            return result+"]";
+        }
+        result = result + tail.getData();
+        CLLNode temp = tail.getNext();
+        while (temp != tail) {
+            result = result + "," + temp.getData();
+            temp = temp.getNext();
+        }
+        return result + "]";
+    }
+
 }
