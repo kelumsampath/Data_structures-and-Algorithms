@@ -122,4 +122,14 @@ public class CircularLinkedList {
         else return Integer.MIN_VALUE;
     }
 
+    // Return the current length of the CLL.
+    public int size(){
+        return length;
+    }
+
+    // Return the current length of the CLL.
+    public int length() {
+        return length;
+    }
+
 }
