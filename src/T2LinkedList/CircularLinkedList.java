@@ -44,4 +44,17 @@ public class CircularLinkedList {
     public int tailPeek(){
         return tail.getData();
     }
+
+    // Returns and removes data from head of list
+    public int removeFromHead(){
+        CLLNode temp = tail.getNext(); // ie. the head of the list
+        if (tail == tail.getNext()) {
+            tail = null;
+        } else {
+            tail.setNext(temp.getNext());
+            temp.setNext(null); // helps clean things up; temp is free
+        }
+        length--;
+        return temp.getData();
+    }
 }
