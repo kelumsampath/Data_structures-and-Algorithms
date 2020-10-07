@@ -150,7 +150,6 @@ public class CircularLinkedList {
             result = result + "," + temp.getData();
             temp = temp.getNext();
         }
-
         return result + "]";
     }
 
