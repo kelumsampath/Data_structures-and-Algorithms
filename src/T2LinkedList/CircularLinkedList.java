@@ -132,4 +132,10 @@ public class CircularLinkedList {
         return length;
     }
 
+    // Remove everything from the CLL.
+    public void clear(){
+        length = 0;
+        tail = null;
+    }
+
 }
