@@ -10,7 +10,7 @@ public class CircularLinkedList {
         length = 0;
     }
 
-    // Adds data to beginning of list.
+    // Adds data to beginning of list
     public void add(int data){
         addToHead(data);
     }
