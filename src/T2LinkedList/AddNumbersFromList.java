@@ -12,7 +12,8 @@ public class AddNumbersFromList {
 
         l2.setdata(80);
         l2.setdata(9);
-
+        l2.setdata(8);
+        l2.setdata(97);
 
         ListNode l3=addTwoNumbers(l1,l2);
         System.out.println(l3.getData());
