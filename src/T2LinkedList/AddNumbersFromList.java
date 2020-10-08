@@ -7,8 +7,7 @@ public class AddNumbersFromList {
 
         l1.setdata(40);
         l1.setdata(6);
-        l1.setdata(94);
-        l1.setdata(76);
+
 
         l2.setdata(80);
         l2.setdata(9);
