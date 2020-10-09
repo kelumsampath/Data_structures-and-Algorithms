@@ -88,4 +88,48 @@ public class DoublyLinkedList {
         length += 1;
     }
 
+    // Add a new value to the rear of the list.
+    public void insertTail(int newValue) {
+        DLLNode newNode = new DLLNode(newValue,tail.getPrev(),tail);
+        newNode.getPrev().setNext(newNode);
+        tail.setPrev(newNode);
+        length += 1;
+    }
+
+    // Remove the value at a given position.
+    // If the position is less than 0, remove the value at position 0.
+    // If the position is greater than 0, remove the value at the last position.
+    public void remove(int position) {
+        // fix position
+        if (position < 0) {
+            position = 0;
+        }
+
+        if (position >= length) {
+            position = length-1;
+        }
+
+        // if nothing in the list, do nothing
+        if (head == null)
+            return;
+
+        // if removing the head element...
+        if (position == 0) {
+            head = head.getNext();
+            if (head == null)
+                tail = null;
+        }
+        // else advance to the correct position and remove
+        else {
+            DLLNode temp = head;
+            for (int i=1; i<position; i+=1) {
+                temp = temp.getNext();
+            }
+            temp.getNext().setPrev(temp.getPrev());
+            temp.getPrev().setNext(temp.getNext());
+        }
+        // reduce the length of the list
+        length -= 1;
+    }
+
 }
