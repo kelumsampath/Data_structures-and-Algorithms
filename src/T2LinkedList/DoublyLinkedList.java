@@ -176,5 +176,25 @@ public class DoublyLinkedList {
         return save.getData();
     }
 
+    // Return a string representation of this collection, in the form: ["str1","str2",...].
+    public String toString() {
+        String result = "[]";
+        if (length == 0)
+            return result;
+        result = "[" + head.getNext().getData();
+        DLLNode temp = head.getNext().getNext();
+        while (temp != tail) {
+            result += "," + temp.getData();
+            temp =  temp.getNext();
+        }
+        return result + "]";
+    }
+
+    // Remove everything from the DLL.
+    public void clearList(){
+        head = null;
+        tail = null;
+        length = 0;
+    }
 
 }
