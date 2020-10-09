@@ -49,4 +49,43 @@ public class DoublyLinkedList {
         head = newNode;
         length += 1;
     }
+
+    // Add a new value to the list at a given position.
+    // All values at that position to the end move over to make room.
+    public void insert(int data, int position) {
+        // fix the position
+        if (position < 0) {
+            position = 0;
+        }
+        if (position > length) {
+            position = length;
+        }
+
+        // if the list is empty, make it be the only element
+        if (head == null) {
+            head = new DLLNode(data);
+            tail = head;
+        }
+        // if adding at the front of the list...
+        else if (position == 0) {
+            DLLNode temp = new DLLNode(data);
+            temp.next = head;
+            head = temp;
+        }
+        // else find the correct position and insert
+        else {
+            DLLNode temp = head;
+            for (int i=1; i<position; i+=1) {
+                temp = temp.getNext();
+            }
+            DLLNode newNode = new DLLNode(data);
+            newNode.next = temp.next;
+            newNode.prev = temp;
+            newNode.next.prev = newNode;
+            temp.next = newNode;
+        }
+        // the list is now one value longer
+        length += 1;
+    }
+
 }
