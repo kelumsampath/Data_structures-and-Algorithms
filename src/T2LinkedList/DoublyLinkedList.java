@@ -36,4 +36,17 @@ public class DoublyLinkedList {
         // else return -1
         return Integer.MIN_VALUE;
     }
+
+    // Return the current length of the DLL.
+    public int length() {
+        return length;
+    }
+
+    // Add a new value to the front of the list.
+    public void insert(int newValue) {
+        DLLNode newNode = new DLLNode(newValue,null,head.getNext());
+        newNode.getNext().setPrev(newNode);
+        head = newNode;
+        length += 1;
+    }
 }
