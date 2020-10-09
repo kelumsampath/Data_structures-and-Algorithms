@@ -132,4 +132,26 @@ public class DoublyLinkedList {
         length -= 1;
     }
 
+    // Remove a node matching the specified node from the list.
+    // Use equals() instead of == to test for a matched node.
+    public synchronized void removeMatched(DLLNode node) {
+        if (head == null)
+            return;
+        if (node.equals(head)) {
+            head = head.getNext();
+            if (head == null)
+                tail = null;
+            return;
+        }
+        DLLNode p = head;
+        while(p != null) {
+            if (node.equals(p)) {
+                p.prev.next = p.next;
+                p.next.prev = p.prev;
+                return;
+            }
+            p = p.getNext();
+        }
+    }
+
 }
