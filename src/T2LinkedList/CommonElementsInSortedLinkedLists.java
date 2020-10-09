@@ -12,7 +12,7 @@ public class CommonElementsInSortedLinkedLists {
                 head = head.next;
             } else if (list1.data > list2.data) {
                 list2 = list2.next;
-            } else { // list1.data < list2.data
+            } else {
                 list1 = list1.next;
             }
         }
