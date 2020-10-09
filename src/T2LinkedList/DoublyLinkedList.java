@@ -154,4 +154,27 @@ public class DoublyLinkedList {
         }
     }
 
+    // Remove the head value from the list. If the list is empty, do nothing.
+    public int removeHead() {
+        if (length == 0)
+            return Integer.MIN_VALUE;
+        DLLNode save = head.getNext();
+        head.setNext(save.getNext());
+        save.getNext().setPrev(head);
+        length -= 1;
+        return save.getData();
+    }
+
+    // Remove the tail value from the list. If the list is empty, do nothing.
+    public int removeTail() {
+        if (length == 0)
+            return Integer.MIN_VALUE;
+        DLLNode save = tail.getPrev();
+        tail.setPrev(save.getPrev());
+        save.getPrev().setNext(tail);
+        length -= 1;
+        return save.getData();
+    }
+
+
 }
