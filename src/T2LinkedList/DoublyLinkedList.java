@@ -190,7 +190,7 @@ public class DoublyLinkedList {
         return result + "]";
     }
 
-    // Remove everything from the DLL.
+    // Remove everything from the DLL
     public void clearList(){
         head = null;
         tail = null;
